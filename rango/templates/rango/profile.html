@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}My Profile{% endblock %}
+
+{% block body_block %}
+
+<div>
+<td><img src="url 'static' {{user.picture}}"></td>
+<td>{{ user.username }}</td>
+</div>
+<div>
+<ul>
+Details:<br/>
+<li>{{ user.email }}</li>
+<li>{{ user.website }}</li>
+</ul>
+<a href="{% url 'register_profile' %}">Update UserProfile</a>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Profile{% endblock %}
+
+{% block body_block %}
+<form role="form"  id="UserProfile_form" method="post" action="/rango/add_profile/" enctype="multipart/form-data">
+<h2 class="form-signin-heading">Add Your Profile</h2>
+<!-- {% csrf_token %}
+{% for hidden in form.hidden_fields %}
+{{ hidden }}
+{% endfor %}
+
+{% for field in form.visible_fields %}
+{{ field.name }}
+{{ field.errors }}
+{{ field.help_text }}<br/>
+{{ field }}<br/>
+{% endfor %} -->
+{% csrf_token %}
+<div class="form-group" >
+ <p class="required"> <label for="id_website">Website:</label>
+     <input class="form-control"  id="id_website" maxlength="30" name="website" type="text"  placeholder="Enter website"/></p>
+</div>
+ <div class="form-group">
+    <p class="required"><label for="id_picture">Upload Picture:</label>
+        <input class="form-control" id="id_picture" name="picture" type="file" placeholder="Enter email" /></p>
+ </div>
+
+<br/>
+<button class="btn btn-primary" type="submit" name="submit">Add Profile</button>
+</form>
+{% endblock %}
